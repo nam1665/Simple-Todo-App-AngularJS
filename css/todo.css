@@ -1,0 +1,72 @@
+/*style for nav-tab*/
+ .nav-tabs > li > a,
+ .nav-tabs > li > a:hover,
+ .nav-tabs > li > a:focus {
+    color: #777;
+}
+ .nav-tabs > .open > a,
+ .nav-tabs > .open > a:hover,
+ .nav-tabs > .open > a:focus,
+ .nav-tabs > li > a:hover,
+ .nav-tabs > li > a:focus {
+    color: #777;
+	background-color: #ddd;
+	border-color: transparent;
+}
+ .nav-tabs > li.active > a,
+ .nav-tabs > li.active > a:hover,
+ .nav-tabs > li.active > a:focus {
+	color: #555;
+	background-color: #fff;
+	border-color: #ddd;
+	border-bottom-color: transparent;
+}
+
+input[type="text"] {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+input[type="text"]:focus{
+	border-color: #66afe9;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+	-moz-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+}
+
+input[type="submit"] {
+  margin-bottom: 10px;
+  color: #FFFFFF;
+  background-color: #9C27B0;
+  border-color: rgba(0,0,0,.075);
+  background-image: none !import;
+}
+
+.remaining {
+  font-size: 20px;  
+}
+
+.task {
+  font-size: 18px;
+}
+
+#alltask .complete-true {
+  text-decoration: line-through;
+  font-style: italic;
+}
+
+#completedtask .complete-false{
+  display: none;
+}
+#notdonetask .complete-true {
+  display: none;
+}
+
+.remove-button {
+  color: #FFFFFF;
+  background-color: #9C27B0;
+  border-color: rgba(0,0,0,.075);
+  background-image: none !import;
+}

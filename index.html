@@ -1,0 +1,63 @@
+<!doctype html>
+<html ng-app="todoApp">
+   <head>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="js/todo.js"></script>
+      <link rel="stylesheet" href="css/todo.css">
+   </head>
+   <body ng-controller="TodoListController">
+      <div class="container todo-app">
+         <header class="app-header text-center">
+            <h1 class="app-title">{{ appTitle }}</h1>
+            <h1 class="app-headline">{{ appHeadline }}</h1>
+         </header>
+         <section class="app-body text-center">
+            <form data-ng-submit="addTodo()" class="todo-form">
+               <input type="text" ng-model="todoText" placeholder="Enter to add new task" />
+               <br />
+               <input type="submit" value="Add Task" />
+            </form>
+            <span class="remaining">{{ remaining() }} of {{ todoApp.length }} completed</span>
+         </section>
+         <div class="panel-heading">
+            <ul class="nav nav-tabs">
+               <li class="active"><a href="#alltask" data-toggle="tab">All Tasks</a></li>
+               <li><a href="#completedtask" data-toggle="tab">Completed Tasks</a></li>
+               <li><a href="#notdonetask" data-toggle="tab">Not Done Tasks</a></li>
+            </ul>
+         </div>
+         <div class="panel-body">
+            <div class="tab-content">
+               <div class="tab-pane fade in active" id="alltask">
+                 <ol class="task">
+                    <li class="complete-{{ todo.done }}" ng-repeat="todo in todoApp track by $index">
+                       <input type="checkbox" ng-model="todo.done">
+                       <span>{{ todo.text }}</span>
+                    </li>
+                 </ol>
+               </div>
+               <div class="tab-pane fade" id="completedtask">
+                 <ol class="task">
+                    <li class="complete-{{ todo.done }}" ng-repeat="todo in todoApp track by $index">
+                       <input type="checkbox" ng-model="todo.done">
+                       <span>{{ todo.text }}</span>
+                    </li>
+                 </ol>
+               </div>
+               <div class="tab-pane fade" id="notdonetask">
+                 <ol class="task">
+                    <li class="complete-{{ todo.done }}" ng-repeat="todo in todoApp track by $index">
+                       <input type="checkbox" ng-model="todo.done">
+                       <span>{{ todo.text }}</span>
+                    </li>
+                 </ol>
+               </div>
+            </div>
+         </div>
+           <button class="remove-button text-center" ng-click="remove()">Remove Completed Items</button>
+      </div>
+   </body>
+</html>
